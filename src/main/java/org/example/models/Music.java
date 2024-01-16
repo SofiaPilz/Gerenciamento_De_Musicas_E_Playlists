@@ -1,5 +1,7 @@
 package org.example.models;
 
+import java.util.Objects;
+
 public class Music {
 
     public String title;
@@ -38,5 +40,27 @@ public class Music {
 
     public void setTime(Integer time) {
         this.time = time;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Music{" +
+                "title='" + title + '\'' +
+                ", single='" + single + '\'' +
+                ", time=" + time +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Music music)) return false;
+        return Objects.equals(getTitle(), music.getTitle()) && Objects.equals(getSingle(), music.getSingle()) && Objects.equals(getTime(), music.getTime());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getTitle(), getSingle(), getTime());
     }
 }

@@ -11,12 +11,14 @@ public class Main {
         Controller controller = new Controller();
 
         while (true) {
-            System.out.println("---------- MENU ---------");
-            System.out.println("  1. cadastrar musica");
-            System.out.println("   2. criar playlist");
-            System.out.println("  3. juntar playlists");
-            System.out.println("    4. reproduzir");
-            System.out.println("-------------------------");
+            System.out.println("------------ MENU -----------");
+            System.out.println("    1. cadastrar musica");
+            System.out.println("2. ver biblioteca de musicas");
+            System.out.println("     3. ver playlist");
+            System.out.println("     4. criar playlist");
+            System.out.println("    5. juntar playlists");
+            System.out.println("      6. reproduzir");
+            System.out.println("-----------------------------");
 
             while (true) {
                 try {
@@ -31,14 +33,21 @@ public class Main {
                             break;
 
                         case 2:
-                            controller.createPlaylist();
+                            controller.viewBiblioteca();
                             break;
-
                         case 3:
-                            controller.unirPlaylist();
+                            controller.exibirPlaylists();
                             break;
 
                         case 4:
+                            controller.createPlaylist();
+                            break;
+
+                        case 5:
+                            controller.unirPlaylist();
+                            break;
+
+                        case 6:
                             controller.reproduce();
                             break;
 
